@@ -4,10 +4,7 @@
 _get_repolink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "goodcat" ]]
-    then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbmR5MTcwOS9jYXR1c2VyYm90L2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
-    elif [[ $UPSTREAM_REPO == "badcat" ]]
+    if [[ $UPSTREAM_REPO == "Master" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL2ppc2FuMDkvY2F0dXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
@@ -37,28 +34,8 @@ _set_bot () {
     rm -rf "$zippath"
     sleep 5
     cd $CATPATH
-    echo "    Starting CatUserBot    "
-    echo "
-                        :'######:::::'###::::'########::::
-                        '##... ##:::'## ##:::... ##..:::::
-                         ##:::..:::'##:. ##::::: ##:::::::
-                         ##:::::::'##:::. ##:::: ##:::::::
-                         ##::::::: #########:::: ##:::::::
-                         ##::: ##: ##.... ##:::: ##:::::::
-                        . ######:: ##:::: ##:::: ##:::::::
-                        :......:::..:::::..:::::..::::::::
-    "
-
-    echo "
-    '##::::'##::'######::'########:'########::'########:::'#######::'########:
-     ##:::: ##:'##... ##: ##.....:: ##.... ##: ##.... ##:'##.... ##:... ##..::
-     ##:::: ##: ##:::..:: ##::::::: ##:::: ##: ##:::: ##: ##:::: ##:::: ##::::
-     ##:::: ##:. ######:: ######::: ########:: ########:: ##:::: ##:::: ##::::
-     ##:::: ##::..... ##: ##...:::: ##.. ##::: ##.... ##: ##:::: ##:::: ##::::
-     ##:::: ##:'##::: ##: ##::::::: ##::. ##:: ##:::: ##: ##:::: ##:::: ##::::
-    . #######::. ######:: ########: ##:::. ##: ########::. #######::::: ##::::
-    :.......::::......:::........::..:::::..::........::::.......::::::..:::::
-    "
+    echo "    Starting TamilUserBot    "
+   
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     python3 -m userbot
 }
