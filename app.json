@@ -7,7 +7,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/sandy1709/catuserbot/",
+  "repository": "https://github.com/imsaravanakrish/tamilbot/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -24,7 +24,7 @@
       "value": ""
     },
     "STRING_SESSION": {
-      "description": "Get this value by running python3 telesetup.py locally or https://generatestringsession.sandeep1709.repl.run",
+      "description": "Get this value by running python3 telesetup.py locally",
       "value": ""
     },
     "TG_BOT_USERNAME": {
@@ -61,8 +61,8 @@
       "required": false
     },
     "UPSTREAM_REPO": {
-      "description": "Use either goodcat or badcat .if you need custom deploy then type your git repo link",
-      "value": "goodcat",
+      "description": "if you need custom deploy then type your git repo link",
+      "value": "master",
       "required": false
     }
   },
