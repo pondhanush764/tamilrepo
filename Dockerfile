@@ -1,7 +1,7 @@
-FROM sandy1709/catuserbot:alpine
+FROM ivetri/tamilbot:alpine
 
 #clonning repo 
-RUN git clone https://github.com/sandy1709/catuserbot.git /root/userbot
+RUN git clone https://github.com/ivetri/tamilbot.git /root/userbot
 #working directory 
 WORKDIR /root/userbot
 
