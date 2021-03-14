@@ -27,14 +27,14 @@ _set_bot () {
     echo "  Downloading source code ..."
     wget -q $(_get_repolink) -O "$zippath"
     echo "  Unpacking Data ..."
-    TAMILANPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
+    TAMILPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
     unzip -qq "$zippath"
     echo "Done"
     echo "  Cleaning ..."
     rm -rf "$zippath"
     sleep 5
     cd $TAMILPATH
-    echo "    Starting TamilUserBot    "
+    echo "    Starting TamilBot    "
    
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     python3 -m userbot
