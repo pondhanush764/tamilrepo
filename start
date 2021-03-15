@@ -4,9 +4,9 @@
 _get_repolink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $UPSTREAM_REPO == "Tamilbot" ]]
+    if [[ $UPSTREAM_REPO == "Tamil" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2ltc2FyYXZhbmFrcmlzaC90YW1pbGJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2ltc2FyYXZhbmFrcmlzaC90YW1pbC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
@@ -16,14 +16,14 @@ _get_repolink () {
             echo "${UPSTREAM_REPO}/archive/master.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2ltc2FyYXZhbmFrcmlzaC90YW1pbGJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2ltc2FyYXZhbmFrcmlzaC90YW1pbC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
     fi
 }
 
 
 _set_bot () {
     local zippath
-    zippath="tamilbot.zip"
+    zippath="tamil.zip"
     echo "  Downloading source code ..."
     wget -q $(_get_repolink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -34,7 +34,7 @@ _set_bot () {
     rm -rf "$zippath"
     sleep 5
     cd $TAMILPATH
-    echo "    Starting TamilBot    "
+    echo "    Starting Tamil    "
    
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     python3 -m userbot
